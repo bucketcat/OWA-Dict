@@ -30,7 +30,7 @@ def generate_username_variations(name):
     return variations
 
 # Read names from file
-with open('user.txt', 'r') as file:
+with open('names.txt', 'r') as file:
     names = file.readlines()
 
 # Remove whitespace characters like `\n` at the end of each line
