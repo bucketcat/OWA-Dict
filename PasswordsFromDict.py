@@ -29,7 +29,7 @@ three_word_combinations = [''.join(triplet) for triplet in itertools.permutation
 merged_combinations = passwords + two_word_combinations + three_word_combinations
 
 # Filter out combinations shorter than 6 characters
-filtered_combinations = [combination for combination in merged_combinations if len(combination) >= 6] #Change this depending on minimum length policy
+filtered_combinations = [combination for combination in merged_combinations if len(combination) >= 7] #Change this depending on minimum length policy
 
 # Write passwords to a file
 with open('passwords.txt', 'w') as file:
