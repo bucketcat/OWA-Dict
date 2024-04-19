@@ -19,8 +19,19 @@ passwords.extend([''.join(pair) for pair in itertools.permutations(words, 2)])
 # Three-word combinations
 passwords.extend([''.join(triplet) for triplet in itertools.permutations(words, 3)])
 
-# Additional variations can be added if needed, such as adding numbers or special characters
+# Two-word combinations
+two_word_combinations = [''.join(pair) for pair in itertools.permutations(words, 2)]
+
+# Three-word combinations
+three_word_combinations = [''.join(triplet) for triplet in itertools.permutations(words, 3)]
+
+# Combine all combinations
+merged_combinations = passwords + two_word_combinations + three_word_combinations
+
+# Filter out combinations shorter than 6 characters
+filtered_combinations = [combination for combination in merged_combinations if len(combination) >= 6]
 
 # Write passwords to a file
 with open('passwords.txt', 'w') as file:
-    file.write('\n'.join(passwords))
+    file.write('\n'.join(filtered_combinations))
+
