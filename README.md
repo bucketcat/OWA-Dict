@@ -21,3 +21,7 @@ No dependencies outside of internal Python libs. This means that no venv is need
 You do not need to explicitly use HTTrack, you can save source manually. But HTTrack will recursively download subdirectories, assets and scripts locally from an website, and is thus the most convenient way to build a custom wordlist automatically.
 
 
+Note that currently, JSON, XML, CSS (Files, not inline), CSV ETC are treated as plaintext files and parsed accordingly. Thus, the only thing that will be tokenized are things included in the initial list. You can implement handling of other file types, or specify the list accordingly if you want proper support for other file types.
+
+
+If you get too much junk from the CSS/XHR/XML/JS/MD/JSON ETC files, simply change the code accordingly or point to a directory with either nothing or exclusively HTML/HTM files.

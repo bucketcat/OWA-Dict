@@ -12,7 +12,7 @@ def read_html_from_file(file_path):
 def extract_text(html):
     soup = BeautifulSoup(html, 'html.parser')
     # Extract text from paragraphs, headers, etc.
-    text = ' '.join([p.get_text() for p in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'p', 'main', 'thead', 'th', 'tfoot', 'textarea,' 'pre', 'body', 'css', 'div', 'ul', 'ol', 'il', 'li', 'img', 'a', 'span', 'form', 'tr', 'td', 'table', 'tbody', 'abbr', 'dfn', 'cite', 'iframe', 'sub', 'sup', 'menu', 'figure', 'var', 'marquee', 'blink', 'animate', 'wss', 'base', 'head', 'link', 'style', 'title', 'aside', 'hgroup', 'article', 'dd', 'dl', 'py', 'dt', 'href', 'i', 'ruby', 'rp', 'rt', 's', 'noscript', 'canvas', 'script', 'del', 'python'])])
+    text = ' '.join([p.get_text() for p in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'p', 'main', 'thead', 'th', 'tfoot', 'textarea,' 'pre', 'body', 'css', 'div', 'ul', 'ol', 'il', 'li', 'img', 'a', 'span', 'form', 'tr', 'td', 'table', 'tbody', 'abbr', 'dfn', 'cite', 'iframe', 'sub', 'sup', 'menu', 'figure', 'var', 'marquee', 'blink', 'animate', 'wss', 'base', 'head', 'link', 'style', 'title', 'aside', 'hgroup', 'article', 'dd', 'dl', 'py', 'dt', 'href', 'i', 'ruby', 'rp', 'rt', 's', 'noscript', 'canvas', 'script', 'del', 'python', 'style'])])
     # added Marquee and Blink for web 1.0 nostalgia.
     return text
     
