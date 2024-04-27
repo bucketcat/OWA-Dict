@@ -16,12 +16,13 @@ No dependencies outside of internal Python libs. This means that no venv is need
 
 
 
-## HTTrack2Wordlist looks for many obscure HTML tags, elements and constructs by default. It filters out duplicate occurrences. You can expand the list with more HTML Elements, depreciated or not. Refer to https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+# HTTrack2Wordlist looks for many obscure HTML tags, elements and constructs by default. It filters out duplicate occurrences. You can expand the list with more HTML Elements, depreciated or not. Refer to https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 You do not need to explicitly use HTTrack, you can save source manually. But HTTrack will recursively download subdirectories, assets and scripts locally from an website, and is thus the most convenient way to build a custom wordlist automatically.
 
 
 Note that currently, JSON, XML, CSS (Files, not inline), CSV ETC are treated as plaintext files and parsed accordingly. Thus, the only thing that will be tokenized are things included in the initial list. You can implement handling of other file types, or specify the list accordingly if you want proper support for other file types.
 
-
 If you get too much junk from the CSS/XHR/XML/JS/MD/JSON ETC files, simply change the code accordingly or point to a directory with either nothing or exclusively HTML/HTM files.
+
+If the target website doesn't have any subdomains, you could also download the entire contents of the network tab as a HAR file and dump it into the target directory.  HTTrack isn't an option. Then, you only have to WGet the CSS files and the HTML file, or save the manually.
