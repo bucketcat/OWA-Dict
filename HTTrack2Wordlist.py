@@ -29,11 +29,16 @@ def extract_text_from_other_files(file_content):
     #handles arbitrary files as plaintext for simple, partial support of other file types.
     return file_content
     
-# Function to tokenize text
+# Function to tokenize text. Includes both toLowerCase and normal case.
 def tokenize_text(text):
     words = re.findall(r'\b\w+\b', text)
+    # text = re.sub(r'[-_]', ' ', text)
+    unique_lower_words = set(word.lower() for word in words)
     unique_words = set(words)
-    return unique_words
+    combined_words = {''.join(word.title() for word in combined.split('/')) for combined in unique_words if '/' in combined}
+    unique_words.update(unique_lower_words)
+    unique_words.update(combined_words)
+    return list(unique_words)
 
 # Function to create wordlist
 def create_wordlist(words):
@@ -51,6 +56,7 @@ def extract_text_from_files(directory):
 
 
 
+                 
 # Example usage. Change.
 html_file_path = './path_to_index_html_file' #Source file. Assuming working directory.
 html = read_html_from_file(html_file_path)
