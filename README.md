@@ -13,3 +13,11 @@ No dependencies outside of internal Python libs. This means that no venv is need
 
 
 ## NOTE: The output wordlist will become VERY large if you include a large dictionary. My example is almost 10 MB. Ensure that your VM has sufficient storage if using large dictionaries. Consider using NTFS or ZFS compression on the working folder if this is problematic for your use case.
+
+
+
+## HTTrack2Wordlist looks for many obscure HTML tags, elements and constructs by default. It filters out duplicate occurrences. You can expand the list with more HTML Elements, depreciated or not. Refer to https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+You do not need to explicitly use HTTrack, you can save source manually. But HTTrack will recursively download subdirectories, assets and scripts locally from an website, and is thus the most convenient way to build a custom wordlist automatically.
+
+
