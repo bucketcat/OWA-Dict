@@ -37,7 +37,7 @@ def tokenize_text(text):
 
 # Function to create wordlist
 def create_wordlist(words):
-    return ' '.join(words)
+    return '\n'.join(words)  # Change to ' ' if you want to separate by whitespace rather than newline.
 
 # Function to read and extract text from files in a directory
 def extract_text_from_files(directory):
