@@ -31,7 +31,7 @@ def extract_text_from_other_files(file_content):
     
 # Function to tokenize text
 def tokenize_text(text):
-    words = re.findall(r'\b\w+\b', text.lower())
+    words = re.findall(r'\b\w+\b', text)
     unique_words = set(words)
     return unique_words
 
@@ -49,6 +49,9 @@ def extract_text_from_files(directory):
                 file_texts.append(file.read())
     return ' '.join(file_texts)
 
+
+def create_wordlist(words, min_length=2):
+    return [word for word in words if len(word) >= min_length]
 # Example usage. Change.
 html_file_path = './path_to_index_html_file' #Source file. Assuming working directory.
 html = read_html_from_file(html_file_path)
