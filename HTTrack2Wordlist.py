@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 import os
+# import json
 
 # Function to read HTML from a local file
 def read_html_from_file(file_path):
@@ -11,10 +12,23 @@ def read_html_from_file(file_path):
 def extract_text(html):
     soup = BeautifulSoup(html, 'html.parser')
     # Extract text from paragraphs, headers, etc.
-    text = ' '.join([p.get_text() for p in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'thead', 'th', 'tfoot', 'textarea,' 'pre', 'body', 'css', 'div', 'ul', 'ol', 'il', 'img', 'a', 'span', 'form', 'tr', 'td', 'table', 'tbody', 'abbr', 'dfn', 'cite', 'iframe', 'sub', 'sup', 'figure', 'var', 'marquee', 'blink', 'animate','wss'])])
+    text = ' '.join([p.get_text() for p in soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'p', 'main', 'thead', 'th', 'tfoot', 'textarea,' 'pre', 'body', 'css', 'div', 'ul', 'ol', 'il', 'li', 'img', 'a', 'span', 'form', 'tr', 'td', 'table', 'tbody', 'abbr', 'dfn', 'cite', 'iframe', 'sub', 'sup', 'menu', 'figure', 'var', 'marquee', 'blink', 'animate', 'wss', 'base', 'head', 'link', 'style', 'title', 'aside', 'hgroup', 'article', 'dd', 'dl', 'py', 'dt', 'href', 'i', 'ruby', 'rp', 'rt', 's', 'noscript', 'canvas', 'script', 'del', 'python'])])
     # added Marquee and Blink for web 1.0 nostalgia.
     return text
-
+    
+    
+# you can implement explicit Json, CSV, XML parsing if you wish.
+    
+# def extract_text_from_json(json_text):
+    # Parse JSON text. Might not work well, customize as and if needed.
+    # data = json.loads(json_text)
+    # text = ' '.join([str(value) for value in data.values()])
+    # return text
+    
+def extract_text_from_other_files(file_content):
+    #handles arbitrary files as plaintext for simple, partial support of other file types.
+    return file_content
+    
 # Function to tokenize text
 def tokenize_text(text):
     words = re.findall(r'\b\w+\b', text.lower())
