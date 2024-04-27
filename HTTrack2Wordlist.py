@@ -50,8 +50,7 @@ def extract_text_from_files(directory):
     return ' '.join(file_texts)
 
 
-def create_wordlist(words, min_length=2):
-    return [word for word in words if len(word) >= min_length]
+
 # Example usage. Change.
 html_file_path = './path_to_index_html_file' #Source file. Assuming working directory.
 html = read_html_from_file(html_file_path)
